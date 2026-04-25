@@ -8,14 +8,13 @@ object cinuro {
     method rendimientoEnDeportista(dosis) = 0 * dosis
 }
 object tito {
-    const peso = 70
-    const inerciaBase = 2
     var rendimiento =  0
 
-
     method consumir(cantidad, bebida) {
-        rendimiento += bebida.rendimientoEnDeportista(cantidad)
+        rendimiento = bebida.rendimientoEnDeportista(cantidad)
     }
 
-    method velocidad() = (rendimiento * inerciaBase) / peso
+    method peso() = 70 
+    method inerciaBase() = 490 
+    method velocidad() = (rendimiento * self.inerciaBase()) / self.peso()
 }
